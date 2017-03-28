@@ -14,35 +14,12 @@ OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 */
 
-/*
-Service Description
-*/
+public interface IYOS1 {
+    public void go();
 
-public class Yos1 implements IYOS1 {
-    /* === PRIVATE DATA === */
+    public void check();
 
+    public void test();
 
-
-    /
-    public Yos1() {
-    }
-
-    public void go() {
-    }
-
-    public void check() {
-    }
-
-    public void test() {
-    }
-
-    public String log() {
-        return "";
-    }
-
-    /* === SETTERS AND GETTERS === */
-
-
-
-
+    public String log();
 }
