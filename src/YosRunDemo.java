@@ -14,10 +14,9 @@ OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 */
 
-public interface Yos {
-    boolean go();
-    boolean check();
-    boolean test();
-    void demo();
-    String log(String comment);
+public class YosRunDemo {
+    public static void main(String[] args) {
+        YosExample yosExample = new YosExample();
+        yosExample.demo();
+    }
 }

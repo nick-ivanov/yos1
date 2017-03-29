@@ -14,12 +14,15 @@ OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 */
 
+import java.io.File;
 import java.time.LocalDate;
+import java.util.HashMap;
 
 public class YosExample implements Yos {
     private double a;
     private double b;
     private double sum;
+    private File logFile;
 
     private double sumHelper() {
         return a + b;
@@ -32,6 +35,7 @@ public class YosExample implements Yos {
     }
 
     public YosExample() {
+
         test();
         a = 0;
         b = 0;
@@ -46,15 +50,21 @@ public class YosExample implements Yos {
         return true;
     }
 
-    public String log() {
-        return "[YosExample log @ " + LocalDate.now().toString() + "]: " +
-                "a: " + a +
-                ", b: " + b +
-                ", sum: " + sum;
+    public String log(String comment) {
+        HashMap<String, String> itemsToLog = new HashMap();
+        itemsToLog.put("a", String.valueOf(a));
+        itemsToLog.put("b", String.valueOf(b));
+        itemsToLog.put("sum", String.valueOf(sum));
+
+        return "[YosExample log @ " + LocalDate.now().toString() + " | "
+                + comment + "]: " + itemsToLog.toString();
     }
 
-    public String version() {
-        return "1";
+    public void demo() {
+        System.out.println("[YosExample Demo]");
+        this.setA(10.1);
+        this.setB(20.2);
+
     }
 
     public void setA(double a) { this.a = a; }
